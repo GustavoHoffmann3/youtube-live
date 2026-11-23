@@ -56,6 +56,24 @@
 .filters { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 20px; }
 .live-section { margin-top: 40px; }
 
+.hero .pill:not(.primary) {
+  background: #303030;
+  color: #ffffff;
+}
+
+.hero .pill:not(.primary):hover {
+  background: #444444;
+}
+
+.hero .pill[aria-pressed="true"] {
+  background: #f1f1f1;
+  color: #111111;
+}
+
+.hero .pill[aria-pressed="true"]:hover {
+  background: #dddddd;
+}
+
 @media (max-width: 1100px) {
   .home-layout:has(.sidebar-open) { grid-template-columns: 190px minmax(0,1fr); }
   .sidebar nav a { gap: 12px; }
