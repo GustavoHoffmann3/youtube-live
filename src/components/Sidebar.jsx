@@ -1,4 +1,4 @@
-import { CalendarDays, Compass, Gift, Globe, History, House, LayoutGrid, MonitorPlay, Video } from "lucide-react";
+import { CalendarDays, Compass, Gift, Globe, History, House, LayoutGrid, MonitorPlay } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { abreviar, iniciais, lives } from "../data/lives";
 
@@ -6,7 +6,7 @@ const menu = [
   ["Início", "", House], ["Explorar", "explorar", Compass], ["Mapa IRL", "mapa", Globe],
   ["Multiview", "multiview", LayoutGrid], ["Seguindo", "seguindo", MonitorPlay],
   ["Próximas lives", "agenda", CalendarDays], ["Recompensas", "recompensas", Gift],
-  ["Histórico", "historico", History], ["Seus canais", "canais", Video]
+  ["Histórico", "historico", History]
 ];
 
 export default function Sidebar({ aberto, fechar }) {

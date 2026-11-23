@@ -77,7 +77,6 @@ export default function App() {
     setUsuario(null);
   }
 
-  // Esta proteção serve apenas para demonstrar o fluxo. Não há autenticação real.
   return (
     <BrowserRouter>
       <Routes>

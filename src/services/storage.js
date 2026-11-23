@@ -4,7 +4,9 @@ export const chaves = {
   categoria: "youtubeLive_category",
   curtidas: "youtubeLive_likes",
   inscricoes: "youtubeLive_subscriptions",
-  historico: "youtubeLive_history"
+  historico: "youtubeLive_history",
+  lembretes: "youtubeLive_reminders",
+  recompensas: "youtubeLive_rewards"
 };
 
 const memoria = new Map();
@@ -14,7 +16,6 @@ export function salvarDados(chave, dados) {
   try {
     localStorage.setItem(chave, JSON.stringify(dados));
   } catch {
-    // A memória mantém o protótipo utilizável enquanto a página estiver aberta.
   }
 }
 
@@ -32,7 +33,6 @@ export function removerDados(chave) {
   try {
     localStorage.removeItem(chave);
   } catch {
-    // A sessão em memória já foi encerrada.
   }
 }
 
