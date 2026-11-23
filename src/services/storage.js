@@ -1,5 +1,6 @@
 export const chaves = {
   usuario: "youtubeLive_user",
+  tema: "youtubeLive_theme",
   categoria: "youtubeLive_category",
   curtidas: "youtubeLive_likes",
   inscricoes: "youtubeLive_subscriptions",

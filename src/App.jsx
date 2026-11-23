@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Live from "./pages/Live";
 import { buscarDados, chaves, removerDados, salvarDados } from "./services/storage";
 
-function Plataforma({ usuario, sair }) {
+function Plataforma({ usuario, sair, tema, alternarTema }) {
   const { pathname } = useLocation();
   const [menuAberto, setMenuAberto] = useState(() => window.matchMedia("(min-width: 901px)").matches);
 
@@ -28,7 +28,8 @@ function Plataforma({ usuario, sair }) {
     <>
       <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
       <Header key={pathname} usuario={usuario} sair={sair} menuAberto={menuAberto}
-        alternarMenu={() => setMenuAberto((aberto) => !aberto)} />
+        alternarMenu={() => setMenuAberto((aberto) => !aberto)}
+        tema={tema} alternarTema={alternarTema} />
       <Routes>
         <Route path="/" element={<Home menuAberto={menuAberto} fecharMenu={() => setMenuAberto(false)} />} />
         <Route path="/live/:id" element={<Live key={pathname} usuario={usuario} />} />
@@ -42,6 +43,22 @@ function Plataforma({ usuario, sair }) {
 
 export default function App() {
   const [usuario, setUsuario] = useState(() => buscarDados(chaves.usuario));
+  // Definido antes da montagem pelo script em index.html, evitando piscar o tema errado.
+  const [tema, setTema] = useState(() =>
+    document.documentElement.dataset.theme === "light" ? "light" : "dark"
+  );
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = tema;
+    document.querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", tema === "light" ? "#ffffff" : "#0f0f0f");
+  }, [tema]);
+
+  function alternarTema() {
+    const proximoTema = tema === "dark" ? "light" : "dark";
+    salvarDados(chaves.tema, proximoTema);
+    setTema(proximoTema);
+  }
 
   function entrar(perfil) {
     salvarDados(chaves.usuario, perfil);
@@ -58,7 +75,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={usuario?.nome ? <Navigate to="/" replace /> : <Login entrar={entrar} />} />
-        <Route path="*" element={usuario?.nome ? <Plataforma usuario={usuario} sair={sair} /> : <Navigate to="/login" replace />} />
+        <Route path="*" element={usuario?.nome ? <Plataforma usuario={usuario} sair={sair} tema={tema} alternarTema={alternarTema} /> : <Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );

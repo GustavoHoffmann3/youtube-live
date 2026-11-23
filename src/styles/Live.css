@@ -17,6 +17,7 @@
   aspect-ratio: 16 / 9;
   border-radius: 5px;
   background: #131313;
+  color: #ffffff;
   container-type: inline-size;
 }
 
@@ -38,7 +39,7 @@
 .reward-panel summary { min-height: 48px; padding: 11px; }
 .reward-panel summary > svg { margin-right: 8px; color: #ffcf36; }
 .reward-panel summary > span { display: inline-flex; flex-direction: column; gap: 5px; width: calc(100% - 52px); vertical-align: middle; }
-.reward-panel small { color: var(--muted); }
+.reward-panel small { color: #c5c5c5; }
 .reward-panel progress { width: 100%; height: 5px; accent-color: #ffcf36; }
 .reward-panel p { padding: 0 12px 12px; }
 .donation-overlay { position: absolute; top: 64px; left: 18px; display: flex; align-items: center; gap: 11px; padding: 13px; background: #1a1a1aee; border: 1px solid #454545; border-radius: 12px; font-size: .875rem; }
@@ -51,7 +52,7 @@
 .player-controls input { width: clamp(42px,11%,92px); min-height: 30px; accent-color: var(--red); }
 .player-live-label { display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; }
 .fullscreen-button { margin-left: auto; }
-.player-feedback { position: absolute; bottom: 98px; left: 14px; padding: 8px; background: var(--surface); border-radius: 6px; }
+.player-feedback { position: absolute; bottom: 98px; left: 14px; padding: 8px; background: var(--surface); color: var(--text); border-radius: 6px; }
 
 .live-info { grid-area: info; width: min(100%,1100px); justify-self: center; min-width: 0; padding: 18px 0 44px; }
 .live-meta { display: flex; align-items: center; gap: 9px; color: var(--muted); text-transform: uppercase; font-size: .75rem; font-weight: 700; }
@@ -62,7 +63,7 @@
 .channel-info .avatar { width: 42px; height: 42px; }
 .channel-info small { display: block; color: var(--muted); margin-top: 5px; }
 .channel-info .pill { margin-left: 4px; }
-.pix-button { color: #64e5db; }
+.pix-button { color: var(--pix); }
 .live-description, .live-feedback { background: var(--surface); border-radius: 12px; padding: 16px; font-size: .9rem; line-height: 1.5; }
 .live-description p { margin-block: 6px; }
 .live-description a { color: var(--blue); font-weight: 700; }
@@ -88,7 +89,7 @@
 .chat-header p { color: var(--muted); font-size: .7rem; margin-top: 7px; }
 .chat-history { overflow: auto; overscroll-behavior: contain; }
 .chat-history:focus-visible { outline-offset: -3px; }
-.pinned-message { padding: 12px 14px; border-bottom: 1px solid var(--border); background: #1c1c1c; }
+.pinned-message { padding: 12px 14px; border-bottom: 1px solid var(--border); background: var(--surface); }
 .pinned-message > p { font-size: .62rem; font-weight: 700; letter-spacing: .05em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
 .chat-feed { padding: 10px 9px 12px 14px; }
 .chat-message { display: flex; gap: 9px; align-items: flex-start; padding: 7px 0; min-height: 48px; }
@@ -96,7 +97,7 @@
 .chat-name { font-size: .7rem; color: var(--muted); font-weight: 700; }
 .chat-message p { margin-top: 4px; font-size: .77rem; line-height: 1.35; overflow-wrap: anywhere; }
 .chat-tag { font-size: .53rem; text-transform: uppercase; background: #185a9e; border-radius: 3px; color: #fff; padding: 2px 4px; margin-left: 3px; }
-.chat-super { background: #155da8; padding: 10px; border-radius: 8px; margin-bottom: 7px; }
+.chat-super { background: #155da8; color: #ffffff; padding: 10px; border-radius: 8px; margin-bottom: 7px; }
 .chat-super .avatar { color: #161100; background: #ffc000; }
 .chat-super .chat-name { color: #fff; }
 .chat-poll { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 14px; }

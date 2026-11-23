@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Bell, Cast, LogOut, Menu, Mic, Play, Search } from "lucide-react";
+import { Bell, Cast, LogOut, Menu, Mic, Play, Search, Sun } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { iniciais } from "../data/lives";
 
@@ -8,7 +8,7 @@ export function Marca() {
     <strong>YouTube</strong><span className="brand-live">Live</span></span>;
 }
 
-export default function Header({ usuario, sair, menuAberto, alternarMenu }) {
+export default function Header({ usuario, sair, menuAberto, alternarMenu, tema, alternarTema }) {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const consulta = new URLSearchParams(search).get("q") ?? "";
@@ -72,6 +72,10 @@ export default function Header({ usuario, sair, menuAberto, alternarMenu }) {
           {painel === "perfil" ? <>
             <strong>{usuario.nome}</strong>
             <button className="pill" onClick={sair}><LogOut size={17} /> Sair</button>
+            <button type="button" className="pill" onClick={alternarTema}
+              aria-pressed={tema === "light"}>
+              <Sun size={17} aria-hidden="true" /> Modo claro
+            </button>
           </> : <p role="status">{
             { voz: "Pesquisa por voz indisponível. Use o campo de pesquisa.",
               cast: "A transmissão para outros dispositivos está indisponível neste protótipo.",
@@ -82,3 +86,4 @@ export default function Header({ usuario, sair, menuAberto, alternarMenu }) {
     </header>
   );
 }
+

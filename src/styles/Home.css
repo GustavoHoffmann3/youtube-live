@@ -23,7 +23,7 @@
 .sidebar-channel { gap: 12px; min-height: 48px; padding: 5px 10px; }
 .sidebar-channel small { display: block; font-size: .67rem; color: var(--muted); margin-top: 4px; }
 .sidebar-channel .live-dot { margin-left: auto; }
-.category-icon { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 5px; background: #43552c; font-size: .65rem; font-weight: 800; }
+.category-icon { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 5px; background: #43552c; color: #ffffff; font-size: .65rem; font-weight: 800; }
 .category-icon-1 { background: #4a396d; }
 .category-icon-2 { background: #802e45; }
 
@@ -38,6 +38,7 @@
   isolation: isolate;
   overflow: hidden;
   background: #16100c;
+  color: #ffffff;
 }
 
 .hero::before, .hero::after { position: absolute; inset: 0; content: ""; z-index: -1; }

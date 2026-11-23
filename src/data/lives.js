@@ -28,3 +28,4 @@ export function abreviar(numero) {
 export function iniciais(nome) {
   return nome.trim().split(/\s+/).slice(0, 2).map((parte) => parte[0]).join("").toUpperCase();
 }
+

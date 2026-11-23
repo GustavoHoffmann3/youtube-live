@@ -25,14 +25,14 @@
   min-width: 0;
   min-height: 46px;
   padding: 10px 12px;
-  border: 1px solid #686868;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #111;
+  background: var(--background);
   color: inherit;
 }
 
-.login-panel input[aria-invalid="true"] { border-color: #ff8d9f; }
-.field-error { color: #ff9aaa; font-size: .825rem; }
+.login-panel input[aria-invalid="true"] { border-color: var(--error-border); }
+.field-error { color: var(--error-text); font-size: .825rem; }
 .password-field { position: relative; }
 .password-field input { padding-right: 48px; }
 .password-field button { position: absolute; top: 2px; right: 3px; }
