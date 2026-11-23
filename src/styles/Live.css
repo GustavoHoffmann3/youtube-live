@@ -111,6 +111,18 @@
 .chat-form input { min-height: 42px; border: 0; border-bottom: 1px solid #747474; padding: 0 3px; background: transparent; color: inherit; font-size: .8rem; }
 .chat-form .icon-button { color: var(--blue); }
 
+.video-player .icon-button:hover,
+.video-player .pill:hover {
+  background: #393939;
+  color: #ffffff;
+}
+
+.video-player .icon-button:focus-visible,
+.video-player .pill:focus-visible {
+  background: #393939;
+  color: #ffffff;
+}
+
 @media (max-width: 1350px) {
   .recommendations .lives-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
 }

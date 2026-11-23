@@ -43,10 +43,17 @@ function Plataforma({ usuario, sair, tema, alternarTema }) {
 
 export default function App() {
   const [usuario, setUsuario] = useState(() => buscarDados(chaves.usuario));
-  // Definido antes da montagem pelo script em index.html, evitando piscar o tema errado.
-  const [tema, setTema] = useState(() =>
-    document.documentElement.dataset.theme === "light" ? "light" : "dark"
-  );
+  const [tema, setTema] = useState(() => {
+  const temaSalvo = buscarDados(chaves.tema);
+
+  if (temaSalvo === "light" || temaSalvo === "dark") {
+    return temaSalvo;
+  }
+
+  return window.matchMedia(
+    "(prefers-color-scheme: light)"
+  ).matches ? "light" : "dark";
+});
 
   useEffect(() => {
     document.documentElement.dataset.theme = tema;
