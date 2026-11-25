@@ -67,7 +67,9 @@ npm run preview
 
 ## Como acessar o protótipo
 
-Na tela de login, informe um **e-mail com formato válido** e **qualquer senha não vazia**. O login é fictício: não há servidor nem autenticação real.
+Crie uma conta em `/cadastro` e depois entre em `/login`. Use apenas credenciais fictícias. O cadastro e a sessão são simulados e ficam no `localStorage` do navegador, restritos ao perfil utilizado.
+
+A senha original não é armazenada. O navegador guarda um verificador derivado com PBKDF2 e um salt individual. Como os dados e a lógica podem ser alterados no próprio navegador, o protótipo não oferece autenticação real nem segurança adequada para produção. Use localhost ou HTTPS para que os recursos de registro estejam disponíveis.
 
 Após entrar, você poderá navegar pela página inicial e pelas transmissões. Inscrições, curtidas, histórico e preferência de categoria são armazenados no `localStorage` do navegador. O player e o chat são demonstrativos; não há transmissão real.
 

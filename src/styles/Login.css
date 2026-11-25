@@ -4,7 +4,7 @@
   place-items: center;
   padding: 20px 14px;
   background:
-    radial-gradient(ellipse at 50% 0%, #2b141a, transparent 62%),
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--red) 12%, var(--background)), transparent 62%),
     var(--background);
 }
 
@@ -30,6 +30,11 @@
   line-height: 1.5;
   margin-bottom: 10px;
 }
+.auth-field {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+}
 .login-panel label {
   font-weight: 700;
   font-size: 0.875rem;
@@ -49,9 +54,21 @@
 .login-panel input[aria-invalid="true"] {
   border-color: var(--error-border);
 }
-.field-error {
+.login-panel .field-error {
   color: var(--error-text);
   font-size: 0.825rem;
+}
+.login-panel .auth-status,
+.auth-alternativa a {
+  color: var(--blue);
+}
+.auth-alternativa a {
+  display: inline-block;
+  padding-block: 4px;
+  text-decoration: underline;
+}
+.login-panel .auth-alternativa {
+  margin-bottom: 0;
 }
 .password-field {
   position: relative;
@@ -66,4 +83,7 @@
 }
 .login-submit {
   margin-top: 13px;
+}
+.login-panel .login-submit:hover {
+  background: #ca0028;
 }
