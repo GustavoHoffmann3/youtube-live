@@ -1,5 +1,6 @@
 export const chaves = {
   usuario: "youtubeLive_user",
+  usuarios: "youtubeLive_users",
   tema: "youtubeLive_theme",
   categoria: "youtubeLive_category",
   curtidas: "youtubeLive_likes",
@@ -10,6 +11,15 @@ export const chaves = {
 };
 
 const memoria = new Map();
+
+export function salvarDadosPersistentes(chave, dados) {
+  localStorage.setItem(chave, JSON.stringify(dados));
+  memoria.delete(chave);
+}
+
+export function buscarDadosPersistentes(chave) {
+  return JSON.parse(localStorage.getItem(chave));
+}
 
 export function salvarDados(chave, dados) {
   memoria.set(chave, dados);

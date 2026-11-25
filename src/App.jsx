@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
 import Home from "./pages/Home";
 import Live from "./pages/Live";
-import { buscarDados, chaves, removerDados, salvarDados } from "./services/storage";
+import { perfilValido } from "./services/auth";
+import { buscarDados, chaves, removerDados, salvarDados, salvarDadosPersistentes } from "./services/storage";
 
 function Plataforma({ usuario, sair, tema, alternarTema }) {
   const { pathname } = useLocation();
@@ -42,7 +44,10 @@ function Plataforma({ usuario, sair, tema, alternarTema }) {
 }
 
 export default function App() {
-  const [usuario, setUsuario] = useState(() => buscarDados(chaves.usuario));
+  const [usuario, setUsuario] = useState(() => {
+    const perfil = buscarDados(chaves.usuario);
+    return perfilValido(perfil) ? perfil : null;
+  });
   const [tema, setTema] = useState(() => {
   const temaSalvo = buscarDados(chaves.tema);
 
@@ -68,7 +73,7 @@ export default function App() {
   }
 
   function entrar(perfil) {
-    salvarDados(chaves.usuario, perfil);
+    salvarDadosPersistentes(chaves.usuario, perfil);
     setUsuario(perfil);
   }
 
@@ -81,6 +86,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={usuario?.nome ? <Navigate to="/" replace /> : <Login entrar={entrar} />} />
+        <Route path="/cadastro" element={usuario?.nome ? <Navigate to="/" replace /> : <Cadastro />} />
         <Route path="*" element={usuario?.nome ? <Plataforma usuario={usuario} sair={sair} tema={tema} alternarTema={alternarTema} /> : <Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
