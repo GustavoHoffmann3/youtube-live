@@ -3,23 +3,38 @@
   display: grid;
   place-items: center;
   padding: 20px 14px;
-  background: radial-gradient(ellipse at 50% 0%,#2b141a,transparent 62%),var(--background);
+  background:
+    radial-gradient(ellipse at 50% 0%, #2b141a, transparent 62%),
+    var(--background);
 }
 
 .login-panel {
-  width: min(100%,420px);
+  width: min(100%, 420px);
   display: grid;
   gap: 9px;
-  padding: clamp(22px,5vw,36px);
+  padding: clamp(22px, 5vw, 36px);
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--surface);
 }
 
-.login-panel .brand { margin-bottom: 16px; }
-.login-panel h1 { font-size: clamp(1.45rem,5vw,1.75rem); }
-.login-panel p { color: var(--muted); font-size: .9rem; line-height: 1.5; margin-bottom: 10px; }
-.login-panel label { font-weight: 700; font-size: .875rem; margin-top: 6px; }
+.login-panel .brand {
+  margin-bottom: 16px;
+}
+.login-panel h1 {
+  font-size: clamp(1.45rem, 5vw, 1.75rem);
+}
+.login-panel p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.login-panel label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-top: 6px;
+}
 .login-panel input {
   width: 100%;
   min-width: 0;
@@ -31,9 +46,24 @@
   color: inherit;
 }
 
-.login-panel input[aria-invalid="true"] { border-color: var(--error-border); }
-.field-error { color: var(--error-text); font-size: .825rem; }
-.password-field { position: relative; }
-.password-field input { padding-right: 48px; }
-.password-field button { position: absolute; top: 2px; right: 3px; }
-.login-submit { margin-top: 13px; }
+.login-panel input[aria-invalid="true"] {
+  border-color: var(--error-border);
+}
+.field-error {
+  color: var(--error-text);
+  font-size: 0.825rem;
+}
+.password-field {
+  position: relative;
+}
+.password-field input {
+  padding-right: 48px;
+}
+.password-field button {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+}
+.login-submit {
+  margin-top: 13px;
+}
