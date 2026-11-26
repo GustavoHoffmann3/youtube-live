@@ -25,7 +25,14 @@ const funcionalidades = new Map([
 const normalizar = (texto) => texto.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 
 function Destaque() {
-  return <section className="hero" aria-labelledby="festival-titulo" style={{ "--hero-image": `url("${destaque.imagem}")` }}>
+  return <section className="hero" aria-labelledby="festival-titulo">
+    <img
+        className="hero-image"
+        src={destaque.imagem}
+        alt=""
+        fetchPriority="high"
+        decoding="async"
+      />
     <div className="hero-content">
       <h1 id="festival-titulo">Festival<br />Aurora<br /> ao vivo de São Paulo</h1>
       <p>{destaque.descricao}</p>
