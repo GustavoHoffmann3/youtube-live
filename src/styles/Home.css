@@ -109,21 +109,26 @@
   color: #ffffff;
 }
 
-.hero::before,
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% 49%;
+  z-index: -2;
+}
+
 .hero::after {
   position: absolute;
   inset: 0;
   content: "";
   z-index: -1;
-}
-.hero::before {
-  background: var(--hero-image) 65% 49% / cover no-repeat;
-}
-.hero::after {
   background:
     linear-gradient(90deg, #000f 1%, #000d 29%, #0004 72%),
     linear-gradient(0deg, #000c, transparent 70%);
 }
+
 .hero-content {
   max-width: 550px;
 }

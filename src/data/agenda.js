@@ -1,7 +1,7 @@
-import arena from "../assets/live-arena.jpg";
-import palco from "../assets/live-palco.jpg";
-import valorant from "../assets/live-valorant.jpg";
-import podcast from "../assets/live-podcast.jpg";
+import arena from "../assets/live-arena.webp";
+import palco from "../assets/live-palco.webp";
+import valorant from "../assets/live-valorant.webp";
+import podcast from "../assets/live-podcast.webp";
 
 export const agenda = [
   { id: "arena-final", titulo: "Final da Arena Nacional", canal: "Arena BR", categoria: "Games", imagem: arena, dias: 1, hora: 20, minuto: 0 },
